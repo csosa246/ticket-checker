@@ -1,0 +1,9 @@
+---
+:concurrency: 5
+:verbose: false
+:timeout: 1
+:retry: 5
+
+development:
+  :verbose: true
+

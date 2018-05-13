@@ -1,0 +1,7 @@
+#!/bin/bash
+bundle exec sidekiq -C config/sidekiq.yml -i 0 -c 10   \
+  -q exports,8                                         \
+  -q imports,8                                         \
+  -q mailers,5                                         \
+  -q auxiliary,1
+
