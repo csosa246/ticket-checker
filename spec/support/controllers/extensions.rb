@@ -13,4 +13,3 @@ module HandleExceptionsInSpecs
   end
 end
 
-

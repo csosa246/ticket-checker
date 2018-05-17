@@ -23,7 +23,7 @@ RSpec.describe Municipality, type: :model do
     context "without a state" do
       it { should have(1).errors_on(:state) }
     end
-    
+
     context "with a city" do
       before { municipality.city = 'Port Chester' }
       it { should have(:no).errors_on(:city) }
@@ -32,8 +32,6 @@ RSpec.describe Municipality, type: :model do
     context "without a city" do
       it { should have(1).errors_on(:city) }
     end
-    
   end
-
-
 end
+

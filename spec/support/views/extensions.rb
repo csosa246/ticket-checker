@@ -22,4 +22,3 @@ module HelperMethodsInViews
   end
 end
 
-
