@@ -8,6 +8,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   before_create :generate_authentication_token
+  has_many :tickets
 
   def remember_me
     true

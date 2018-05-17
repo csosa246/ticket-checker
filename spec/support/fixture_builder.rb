@@ -11,7 +11,7 @@ fixture_paths = Module.new do
     private
 
     def ordered_tables
-      %w(municipalities tickets users)
+      %w(users municipalities tickets)
     end
 
     def path_for(file)

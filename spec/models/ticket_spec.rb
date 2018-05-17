@@ -1,11 +1,22 @@
 require 'rails_helper'
 
 RSpec.describe Ticket, type: :model do
+  let(:user) { users(:admin) }
   let(:municipality) { municipalities(:port_chester) }
   let(:ticket) { described_class.new }
 
   describe "validations" do
     subject { ticket }
+
+    context "with a user id" do
+      before { ticket.user_id = user.id }
+      it { should have(:no).errors_on(:user_id) }
+    end
+
+    context "without a user id" do
+      before { expect(ticket.user_id).to be_nil }
+      it { should have(1).errors_on(:user_id) }
+    end
 
     context "with a municipality id" do
       before { ticket.municipality_id = municipality.id }
@@ -36,26 +47,6 @@ RSpec.describe Ticket, type: :model do
       before { expect(ticket.amount).to be_nil }
       it { should have(1).errors_on(:amount) }
     end
-    # it { should have(1).errors_on(:violation_id) }
-    # end
-
-    # context "with a state" do
-    # before { municipality.state = 'New York' }
-    # it { should have(:no).errors_on(:state) }
-    # end
-
-    # context "without a state" do
-    # it { should have(1).errors_on(:state) }
-    # end
-
-    # context "with a city" do
-    # before { municipality.city = 'Port Chester' }
-    # it { should have(:no).errors_on(:city) }
-    # end
-
-    # context "without a city" do
-    # it { should have(1).errors_on(:city) }
-    # end
   end
 end
 
