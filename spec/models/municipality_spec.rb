@@ -3,6 +3,12 @@ require 'rails_helper'
 RSpec.describe Municipality, type: :model do
   let(:municipality) { described_class.new }
 
+  describe "#klass" do 
+    subject { municipality.klass }
+    let(:municipality) { municipalities(:port_chester) }
+    it { should == 'PortChester' }
+  end
+
   describe "validations" do
     subject { municipality }
 

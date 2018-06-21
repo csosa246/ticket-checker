@@ -5,9 +5,9 @@ default: &default
 
 development:
   <<: *default
-  database: ticket_checker_development
+  database: violation_scanner_development
 
 test:
   <<: *default
-  database: ticket_checker_test
+  database: violation_scanner_test
 

@@ -15,6 +15,8 @@ gem 'jbuilder'
 gem 'jquery-rails'
 gem 'money-rails'
 gem 'newrelic_rpm'
+gem 'nokogiri'
+gem 'mechanize'
 # Rollbar suggests using this gem for JSON serialization
 gem 'oj'
 gem 'onfleet-ruby'
